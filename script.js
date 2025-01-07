@@ -1,35 +1,23 @@
-const inputFlavor = prompt("Please enter the Froyo flavors once per each that you want, separated by commas.");
-const flavorArray = inputFlavor.split(",");
+const inputFlavor = prompt("Please enter the Froyo flavors once per each that you want, separated by commas.").split(",");
 
 
-// Loop through the array and trim the values
-for (let i = 0; i < flavorArray.length; i++) {
-    console.log(`Flavor : ${flavorArray[i].trim()}`);
+
+function calculateOrder(flavorArray) {
+
+    const flavorCount = {};
+    for (const flavors of flavorArray) {
+        if (flavors in flavorCount) { flavorCount[flavors] += 1; }
+        else { flavorCount[flavors] = 1; }
+    }
+    return flavorCount;
 }
 
-// create an object to store the flavors
-
-const froyoFlavors = {
-    flavors: flavorArray.map(function (flavor) {
-        return flavor.trim();
-    })
-};
-// count the number of each flavor
-
-const flavorCount = {};
-
-froyoFlavors.flavors.forEach(function (flavor) {
-    if (flavorCount[flavor]) {
-        flavorCount[flavor]++;
-    } else {
-        flavorCount[flavor] = 1;
-    }
-});
 
 let message = "You have ordered these Frogurt flavors:\n";
 for (const flavor in flavorCount) {
     message += `${flavor}: ${flavorCount[flavor]}\n`;
 };
+
 message += "Unfortunately, the Froygurt is cursed.";
 
 
