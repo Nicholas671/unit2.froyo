@@ -12,10 +12,10 @@ function calculateOrder(flavorArray) {
     return flavorCount;
 }
 
-
+froyoOrder = calculateOrder(inputFlavor);
 let message = "You have ordered these Frogurt flavors:\n";
-for (const flavor in flavorCount) {
-    message += `${flavor}: ${flavorCount[flavor]}\n`;
+for (const key in froyoOrder) {
+    message += `${key}: ${froyoOrder[key]}\n`;
 };
 
 message += "Unfortunately, the Froygurt is cursed.";
