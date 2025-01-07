@@ -1,0 +1,1 @@
+const inputFlavor = prompt("Please enter flavors separated by commas.", "coffee, coffee, vanilla, vanilla,vanilla, strawberry");
