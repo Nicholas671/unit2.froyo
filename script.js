@@ -27,4 +27,4 @@ console.log(message);
 
 setTimeout(() => {
     window.location.href = "https://youtu.be/i73-lpVV-Jo?si=7ujQZNejyjL0typU";
-}, 5000);
+}, 2100);
